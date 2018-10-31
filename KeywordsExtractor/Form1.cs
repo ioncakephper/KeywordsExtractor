@@ -25,12 +25,17 @@ namespace KeywordsExtractor
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            NewApplicationFile();
         }
 
+        private void NewApplicationFile()
+        {
+            fileInterface1.NewApplicationFile();
+        }
 
         private void newToolStripButton_Click(object sender, EventArgs e)
         {
-    
+            NewApplicationFile();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -147,6 +152,30 @@ namespace KeywordsExtractor
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             RemoveSelectedSources();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenApplicationFile();
+        }
+
+        private void OpenApplicationFile()
+        {
+            fileInterface1.OpenApplicationFile();
+        }
+
+        private void openToolStripButton_Click(object sender, EventArgs e)
+        {
+            OpenApplicationFile();
+        }
+
+        private void extractToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var d = new OptionsDialog();
+            if (d.ShowDialog().Equals(DialogResult.OK))
+            {
+                MessageBox.Show("Extracting keywords from corpus sources...", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
